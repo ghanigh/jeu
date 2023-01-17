@@ -71,11 +71,11 @@ const questions = [
         { text: "Russie", correct: true }
       ]
     },
- 
     
     
     // 19 autres questions
   ];
+  
   
   let currentQuestion = 0;
   let score = 0;
@@ -92,9 +92,11 @@ const questions = [
       button.textContent = answer.text;
       button.addEventListener("click", selectAnswer);
       document.querySelector("#answers").appendChild(button);
+      
     });
     
   }
+  
     // start countdown for current question
     countdown = setInterval(() => {
         time--;
@@ -130,6 +132,7 @@ const questions = [
     }
   }
   
+  
   displayQuestion();
   function selectAnswer(event) {
     const selectedButton = event.target;
@@ -155,6 +158,14 @@ const questions = [
     }
   }
   
-
+  
+  const restartButton = document.querySelector("#restart");
+  restartButton.addEventListener("click", restartGame);
+  
+  function restartGame() {
+    location.reload();
+  }
+  
+  
   
   
